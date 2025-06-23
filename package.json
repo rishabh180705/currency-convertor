@@ -1,6 +1,5 @@
 {
   "name": "convertor",
-  "homepage": "https://rishabh180705.github.io/currency-convertor/",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -8,9 +7,8 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "preview": "vite preview"
+  
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.10",
