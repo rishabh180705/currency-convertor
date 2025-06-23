@@ -77,7 +77,45 @@ fetchAmount();
 },[setFromCountryFlag, setToCountryFlag,FromCountryFlag, ToCountryFlag,amount]);
 
 
+const fetchAmount = async () => {
+  try {
+    const from = Codes.find(c => c.alphaCode === FromCountryFlag)?.currencyCode;
+    const to = Codes.find(c => c.alphaCode === ToCountryFlag)?.currencyCode;
 
+    if (!from || !to || !amount) {
+      alert("Please select valid currencies and enter an amount.");
+      return;
+    }
+    if( amount <= 0) {
+      alert("Please enter a valid amount greater than 0.");
+      return;  }
+
+      if(to===from){
+      alert("currencies cannot be the same.");
+      return;
+    }
+    const response = await fetch(`https://api.frankfurter.dev/v1/latest?base=${from}`);
+
+    if (!response.ok) {
+      alert("Failed to fetch exchange rates");
+      return;
+    }
+
+    const data = await response.json();
+
+    const rate = data.rates[to];
+    if (!rate) {
+      alert("Conversion rate not available");
+      return;
+    }
+
+    const converted = (amount * rate).toFixed(3);
+    setConvertedAmount(`${converted} ${to}`);
+  } catch (error) {
+    console.error("Error fetching exchange rates:", error);
+    alert("Something went wrong while converting.");
+  }
+};
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-100 to-blue-300 dark:from-gray-900 dark:to-gray-800 p-6">
