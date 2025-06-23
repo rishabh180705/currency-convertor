@@ -18,7 +18,7 @@ const HistoricalRates = () => {
       try {
         const symbols = selectedCurrencies.join(",");
         const res = await axios.get(
-          `https://api.frankfurter.dev/${selectedDate}?from=USD&to=${symbols}`
+          `https://api.frankfurter.app/${selectedDate}?from=USD&to=${symbols}`
         );
         setRates(res.data.rates);
         setError("");
