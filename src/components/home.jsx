@@ -30,7 +30,8 @@ const [convertedAmount,setConvertedAmount]=useState("");
   // }, [darkMode]);
 
 
-const fetchAmount = async () => {
+useEffect(() => {
+  const fetchAmount = async () => {
   try {
     const from = Codes.find(c => c.alphaCode === FromCountryFlag)?.currencyCode;
     const to = Codes.find(c => c.alphaCode === ToCountryFlag)?.currencyCode;
@@ -68,7 +69,7 @@ const fetchAmount = async () => {
     console.error("Error fetching exchange rates:", error);
     alert("Something went wrong while converting.");
   }
-};
+}},[setFromCountryFlag, setToCountryFlag,FromCountryFlag, ToCountryFlag]);
 
 
 
