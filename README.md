@@ -12,16 +12,11 @@ This is a responsive and theme-aware **Currency Rates Viewer** web application b
 
 ## 🚀 Live Demo
 
-> Coming soon: Deploy using Vercel / Netlify / GitHub Pages
+> https://currency-convertor-z6f1.vercel.app/
 
 ---
 
-## 📸 Screenshots
 
-![screenshot-light](./screenshots/light-theme.png)
-![screenshot-dark](./screenshots/dark-theme.png)
-
----
 
 ## 🧰 Tech Stack
 
