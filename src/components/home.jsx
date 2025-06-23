@@ -69,7 +69,12 @@ useEffect(() => {
     console.error("Error fetching exchange rates:", error);
     alert("Something went wrong while converting.");
   }
-}},[setFromCountryFlag, setToCountryFlag,FromCountryFlag, ToCountryFlag]);
+}
+
+
+fetchAmount();
+
+},[setFromCountryFlag, setToCountryFlag,FromCountryFlag, ToCountryFlag]);
 
 
 
