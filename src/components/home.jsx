@@ -74,7 +74,7 @@ useEffect(() => {
 
 fetchAmount();
 
-},[setFromCountryFlag, setToCountryFlag,FromCountryFlag, ToCountryFlag]);
+},[setFromCountryFlag, setToCountryFlag,FromCountryFlag, ToCountryFlag,amount]);
 
 
 
