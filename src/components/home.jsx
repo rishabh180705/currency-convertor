@@ -18,7 +18,7 @@ const Home = () => {
   const [CountryCodes,setCountryCode] = useState(Codes);
   // const [FromCurrency, setFromCurrency] = useState("USD");
   // const [ToCurrency, setToCurrency] = useState("IND");
-  const [amount, setAmount] = useState("");
+  const [amount, setAmount] = useState(1);
   const [FromCountryFlag, setFromCountryFlag] = useState("US");
   const [ToCountryFlag, setToCountryFlag] = useState("IN");
 const [convertedAmount,setConvertedAmount]=useState("");
