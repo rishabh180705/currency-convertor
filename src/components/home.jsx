@@ -22,6 +22,7 @@ const Home = () => {
   const [FromCountryFlag, setFromCountryFlag] = useState("US");
   const [ToCountryFlag, setToCountryFlag] = useState("IN");
 const [convertedAmount,setConvertedAmount]=useState("");
+const [change,setChange]=useState(false);
   const navigate = useNavigate();
 
   // useEffect(() => {
@@ -79,9 +80,10 @@ fetchAmount();
 
 const fetchAmount = async () => {
   try {
-    const from = Codes.find(c => c.alphaCode === FromCountryFlag)?.currencyCode;
-    const to = Codes.find(c => c.alphaCode === ToCountryFlag)?.currencyCode;
-
+  
+    const to = Codes.find(c => c.alphaCode === FromCountryFlag)?.currencyCode;
+    const from = Codes.find(c => c.alphaCode === ToCountryFlag)?.currencyCode;
+    
     if (!from || !to || !amount) {
       alert("Please select valid currencies and enter an amount.");
       return;
