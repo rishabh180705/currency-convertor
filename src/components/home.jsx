@@ -37,10 +37,6 @@ useEffect(() => {
     const from = Codes.find(c => c.alphaCode === FromCountryFlag)?.currencyCode;
     const to = Codes.find(c => c.alphaCode === ToCountryFlag)?.currencyCode;
 
-    if (!from || !to || !amount) {
-      alert("Please select valid currencies and enter an amount.");
-      return;
-    }
     if( amount <= 0) {
       alert("Please enter a valid amount greater than 0.");
       return;  }
